@@ -15,7 +15,7 @@ export default function Unique(){
         return (value / sensor.measurements.length).toFixed(4);
     }
 
-    function getRecentTemperature(){
+    function getRecentTemperature(option){
         var recentTemperature;
         var changingValue = sensor.measurements[0]['date_hour'];
         sensor.measurements.forEach(element => {
@@ -24,7 +24,21 @@ export default function Unique(){
                 recentTemperature = element.temperature;
             }
         });
-        return recentTemperature;
+
+        if(option == 1){
+            return recentTemperature;
+        }else if(option == 2){
+            if(recentTemperature < sensor.temperature_max && recentTemperature > sensor.temperature_min){
+                return (
+                    <span>Temperatura está na faixa.</span>
+                );
+            }else{
+                return (
+                    <span>Temperatura não está na faixa</span>
+                );
+            }
+
+        }
     }
 
     return(
@@ -48,7 +62,12 @@ export default function Unique(){
 
                     <div className="sensor-measurements__recentTemperature">
                         <h2>Temperatura mais recente</h2>
-                        <p>{getRecentTemperature()}</p>
+                        <p>{getRecentTemperature(1)}</p>
+                    </div>
+
+                    <div className="sensor-measurements__range">
+                        <h2>Temperatura está dentro da faixa?</h2>
+                        <p>{getRecentTemperature(2)}</p>
                     </div>
                 </div>
             </div>
