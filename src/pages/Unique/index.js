@@ -1,7 +1,6 @@
-import React, {useState, useCallback} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import React from 'react';
+import AnyChart from 'anychart-react';
 
-import api from '../../services/api';
 import sensor from './sensor.json';
 
 import './styles.css';
@@ -37,8 +36,15 @@ export default function Unique(){
                     <span>Temperatura não está na faixa</span>
                 );
             }
-
         }
+    }
+
+    function getInfoToGraph(){
+        var infoArray = [];
+        sensor.measurements.forEach(element => {
+            infoArray.push(element.temperature);
+        });
+        return infoArray;
     }
 
     return(
@@ -68,6 +74,14 @@ export default function Unique(){
                     <div className="sensor-measurements__range">
                         <h2>Temperatura está dentro da faixa?</h2>
                         <p>{getRecentTemperature(2)}</p>
+                    </div>
+
+                    <div className="sensor-measurements__graph">
+                        <h2>Gráfico das leituras passadas</h2>
+                        <AnyChart
+                            type="column"
+                            data={getInfoToGraph()}
+                        />
                     </div>
                 </div>
             </div>
