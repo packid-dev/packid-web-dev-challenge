@@ -3,7 +3,7 @@ import AnyChart from 'anychart-react';
 
 import sensor from './sensor.json';
 
-import './styles.css';
+import './styles.scss';
 
 export default function Unique(){
     function getAVG(){
@@ -51,7 +51,8 @@ export default function Unique(){
         <div className="sensor-container">
             <div className="sensor-content">
                 <div className="sensor-name">
-                    <h2>{sensor.label}</h2>
+                    <h2>Nome do sensor</h2>
+                    <p>{sensor.label}</p>
                 </div>
 
                 <div className="sensor-range">
