@@ -12,6 +12,34 @@ body{
 }
 
 @media screen and (min-width: 320px){
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+
+        h2{
+            color: #2a5775;
+            font-size: 16px;
+            text-align: center;
+            margin: 20px 0;
+            display: inline-block;
+            border: 1px solid #303030;
+            background-color: #c5ebf9;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        p{
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #303030
+        }
+    }
+
     .sensor-container{
         padding: 50px 20px;
         background: url(../../src/main-image.jpg);
@@ -26,35 +54,10 @@ body{
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.1);
+
+            div{
+
+            }
         }
-    }
-
-    div{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 100%;
-
-        .min,
-        .max{
-            width: 50%;
-        }
-    }
-
-    h2{
-        color: #2a5775;
-        font-size: 16px;
-        text-align: center;
-        margin: 20px 0;
-        width: 100%;
-    }
-
-    p{
-        width: 100%;
-        text-align: center;
-        font-size: 14px;
-        font-weight: 600;
-        color: #303030
     }
 }
