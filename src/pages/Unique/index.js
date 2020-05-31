@@ -19,12 +19,11 @@ export default function Unique(){
         var recentTemperature;
         var changingValue = sensor.measurements[0]['date_hour'];
         sensor.measurements.forEach(element => {
-            if(changingValue > element.date_hour){
+            if(changingValue <= element.date_hour){
                 changingValue = element.date_hour;
                 recentTemperature = element.temperature;
             }
         });
-        console.log(changingValue);
         return recentTemperature;
     }
 
