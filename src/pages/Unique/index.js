@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 
 import api from '../../services/api';
@@ -9,10 +9,23 @@ import './styles.css';
 export default function Unique(){
     function getAVG(){
         var value = 0;
-        for(var i = 0; i <= sensor.measurements.length; i++){
-            value += sensor.measurements[1]['temperature'];
-        }
+        sensor.measurements.forEach(element => {
+            value += element.temperature;
+        });
         return (value / sensor.measurements.length).toFixed(4);
+    }
+
+    function getRecentTemperature(){
+        var recentTemperature;
+        var changingValue = sensor.measurements[0]['date_hour'];
+        sensor.measurements.forEach(element => {
+            if(changingValue > element.date_hour){
+                changingValue = element.date_hour;
+                recentTemperature = element.temperature;
+            }
+        });
+        console.log(changingValue);
+        return recentTemperature;
     }
 
     return(
@@ -33,7 +46,11 @@ export default function Unique(){
                         <h2>Média de temperatura</h2>
                         <p>{getAVG()}</p>
                     </div>
-                    
+
+                    <div className="sensor-measurements__recentTemperature">
+                        <h2>Temperatura mais recente</h2>
+                        <p>{getRecentTemperature()}</p>
+                    </div>
                 </div>
             </div>
         </div>
