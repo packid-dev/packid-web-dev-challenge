@@ -1,0 +1,7 @@
+Para rodar esses comandos é necessário ter instalado na máquina o npm/nodejs.
+
+-Abrir a pasta do projeto em um terminal.
+-Rodar o comando "npm install".
+-Após a instalação, rodar o comando "npm start".
+-Isso abrirá o projeto no seu navegador padrão.
+
