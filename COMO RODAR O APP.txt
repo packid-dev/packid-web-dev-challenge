@@ -1,0 +1,12 @@
+É necessário ter o gerenciador de pacotes Npm/node.js instalado.
+
+depois de obter o Npm:
+- Acessar a pasta do projeto "packid-web-dev-chalenge" através do cmd no seu dispositivo;
+- Dentro da pasta rode o comando "npm install";
+- Depois de finalizado o processo de instalação das dependências:
+    - Rode o comando "npm start";
+
+O app iniciará em localhost;
+
+Obs: o arquivo json foi utilizado usando "import", por ser mais prático;
+mas em desenvolvimento faria essa leitura através de codigo backend ou obter através de rest/api etc.. ;
