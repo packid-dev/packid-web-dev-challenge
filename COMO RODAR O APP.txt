@@ -1,7 +1,7 @@
 É necessário ter o gerenciador de pacotes Npm/node.js instalado.
 
 depois de obter o Npm:
-- Acessar a pasta do projeto "packid-web-dev-chalenge" através do cmd no seu dispositivo;
+- Acessar a pasta do projeto "packid-web-dev-challenge" através do cmd no seu dispositivo;
 - Dentro da pasta rode o comando "npm install";
 - Depois de finalizado o processo de instalação das dependências:
     - Rode o comando "npm start";
