@@ -1,0 +1,19 @@
+1 Passo:
+
+Subir o projeto local
+
+2 Passo:
+Entrar na pasta "projeto"
+Executar o camando "rails server"
+
+3 Passso:
+
+Acessar o link 
+
+http://localhost:3000/salutation/main
+
+4 Passo:
+
+Os arquivos de desafio se encontram na pasta app/controllers com o nome
+de salutation_controller.rb e na pasta app/views/salutation com o nome de 
+"main.html.erb"
